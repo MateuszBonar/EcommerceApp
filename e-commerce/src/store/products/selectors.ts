@@ -1,4 +1,5 @@
-import { IStore } from "../types";
-import { IProductsModuleStore } from "./types";
+import { IStore } from '../types';
+import { IProductsModuleStore } from './types';
 
-export const getProductsModuleSelector = (store: IStore): IProductsModuleStore => store.productsModule;
+export const getProductsModuleSelector = (store: IStore): IProductsModuleStore =>
+  store.productsModule;

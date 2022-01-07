@@ -1,9 +1,10 @@
-import {Dispatch} from "redux";
+import { Dispatch } from 'redux';
 //TO DO WRAPPER ACTION
-export const actionWrapper = (actionType: string, actionFn: Promise<any>) => (dispatch: Dispatch) => {
-    dispatch({type: `${actionType}_STARTED`});
+export const actionWrapper =
+  (actionType: string, actionFn: Promise<any>) => (dispatch: Dispatch) => {
+    dispatch({ type: `${actionType}_STARTED` });
     return actionFn.then(
-        (response: unknown) => dispatch({type: `${actionType}_SUCCESS`, payload: response}),
-        (err: Error) => dispatch({type: `${actionType}_FAILURE`, payload: err})
+      (response: unknown) => dispatch({ type: `${actionType}_SUCCESS`, payload: response }),
+      (err: Error) => dispatch({ type: `${actionType}_FAILURE`, payload: err })
     );
-};
+  };

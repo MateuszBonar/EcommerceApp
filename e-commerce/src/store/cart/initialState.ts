@@ -1,5 +1,5 @@
 export const initialStateModuleCart = {
-    carts: [],
-    error: null,
-    isLoading: false
-}
+  carts: [],
+  error: null,
+  isLoading: false,
+};

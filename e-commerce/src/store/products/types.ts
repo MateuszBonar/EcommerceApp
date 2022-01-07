@@ -1,10 +1,9 @@
-import { IStoreModule } from "../types";
+import { IStoreModule } from '../types';
 
-export interface IProduct {
-}
+export interface IProduct {}
 
 export interface IProductsModuleStore extends IStoreModule {
-    products: IProduct[]
+  products: IProduct[];
 }
 
-export type ProductsActionPayload = IProduct[] | Error | null
+export type ProductsActionPayload = IProduct[] | Error | null;

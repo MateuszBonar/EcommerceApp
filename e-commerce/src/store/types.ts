@@ -1,31 +1,31 @@
-import {Action} from 'redux'
+import { Action } from 'redux';
 import { ICartModuleStore } from './cart/types';
 import { IProductsModuleStore } from './products/types';
 
 export interface IStore {
-    productsModule: IProductsModuleStore,
-    cartModule: ICartModuleStore
+  productsModule: IProductsModuleStore;
+  cartModule: ICartModuleStore;
 }
 
 export interface ActionsParam {
-    [key: string]: Function;
+  [key: string]: Function;
 }
 
 export interface IStoreModule {
-    isLoading: boolean;
-    error: Error | null
+  isLoading: boolean;
+  error: Error | null;
 }
 
 export interface IActionWithError<P> {
-    error?: P
+  error?: P;
 }
 
 export interface ILoadingAction {
-    loading?: boolean
+  loading?: boolean;
 }
 
 export interface IActionBody<P> extends IActionWithError<Error>, ILoadingAction {
-    payload?: P;
+  payload?: P;
 }
 
-export interface IReduxAction<T> extends Action<string>, IActionBody<T>{}
+export interface IReduxAction<T> extends Action<string>, IActionBody<T> {}

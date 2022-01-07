@@ -1,5 +1,5 @@
 export const initialStateModuleProducts = {
-    products: [],
-    error: null,
-    isLoading: false
-}
+  products: [],
+  error: null,
+  isLoading: false,
+};

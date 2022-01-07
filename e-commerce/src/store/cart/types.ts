@@ -1,10 +1,9 @@
-import { IStoreModule } from "../types";
+import { IStoreModule } from '../types';
 
-export interface ICart {
-}
+export interface ICart {}
 
 export interface ICartModuleStore extends IStoreModule {
-    carts: ICart[]
+  carts: ICart[];
 }
 
-export type CartActionPayload = ICart[] | Error | null
+export type CartActionPayload = ICart[] | Error | null;
