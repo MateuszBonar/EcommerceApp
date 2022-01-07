@@ -42,11 +42,7 @@ const Cart: FC = (): JSX.Element => {
       <Grid container spacing={3}>
         {carts.line_items.map(lineItem => (
           <Grid item xs={12} sm={4} key={lineItem.id}>
-            <CartItem
-              item={lineItem}
-              onUpdateCartQty={onUpdateCartQty}
-              onRemoveFromCart={onRemoveFromCart}
-            />
+            <CartItem item={lineItem} />
           </Grid>
         ))}
       </Grid>

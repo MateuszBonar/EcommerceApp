@@ -23,12 +23,8 @@ const App = () => {
         <CssBaseline />
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Products />
-          </Route>
-          <Route exact path="/cart">
-            <Cart />
-          </Route>
+          <Route exact path="/" component={Products} />
+          <Route exact path="/cart" component={Cart} />
           {/*<Route path="/checkout" exact>*/}
           {/*    <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout}*/}
           {/*              error={errorMessage}/>*/}
