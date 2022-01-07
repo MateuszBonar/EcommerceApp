@@ -1,5 +1,5 @@
-import { IReduxAction } from '../types';
-import * as actions from '../constants';
+import { IReduxAction } from 'Store/types';
+import * as actions from 'Store/constants';
 import { initialStateModuleUI } from './initialState';
 import { IUIModuleStore, UIActionPayload } from './types';
 

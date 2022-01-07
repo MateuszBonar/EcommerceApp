@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { ActionsParam } from '../store/types';
+import { ActionsParam } from 'Store';
 
 const useDispatchedActions = (actions: ActionsParam): ActionsParam => {
   const dispatch = useDispatch();

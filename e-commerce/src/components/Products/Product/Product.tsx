@@ -9,10 +9,11 @@ import {
 } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 
+import { IProduct } from 'Store/products';
+import { useDispatchedActions } from 'Hooks';
+import { actions } from 'Store';
+
 import useStyles from './styles';
-import { IProduct } from '../../../store/products/types';
-import useDispatchedActions from '../../../hooks/useDispatchedActions';
-import { actions } from '../../../store/actions';
 
 const Product: FC<{ product: IProduct }> = ({ product }) => {
   const classes = useStyles();

@@ -1,7 +1,7 @@
 import { Action } from 'redux';
-import { ICartModuleStore } from './cart/types';
-import { IProductsModuleStore } from './products/types';
-import { IUIModuleStore } from './ui/types';
+import { ICartModuleStore } from 'Store/cart';
+import { IProductsModuleStore } from 'Store/products';
+import { IUIModuleStore } from 'Store/ui';
 
 export interface IStore {
   productsModule: IProductsModuleStore;

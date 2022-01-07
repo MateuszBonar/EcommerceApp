@@ -1,8 +1,8 @@
 import { CombinedState, Reducer, combineReducers } from 'redux';
-import productsReducer from './products/reducer';
-import cartReducer from './cart/reducer';
+import productsReducer from 'Store/products';
+import cartReducer from 'Store/cart';
+import UIReducer from 'Store/ui';
 import { IStore } from './types';
-import UIReducer from './ui/reducer';
 
 const rootReducer: Reducer<CombinedState<IStore>> = combineReducers({
   productsModule: productsReducer,

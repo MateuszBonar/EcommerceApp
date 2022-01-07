@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
-import useStyles from './styles';
 
-import logo from '../../assets/commerce.png';
-import { getCartModuleSelector } from '../../store/cart/selectors';
+import { getCartModuleSelector } from 'Store/cart/selectors';
 import { PUBLIC_ROUTE } from '../../routes';
+import logo from 'Assets/commerce.png';
+
+import useStyles from './styles';
 
 const PrimarySearchAppBar: FC = (): JSX.Element => {
   const { carts } = useSelector(getCartModuleSelector);

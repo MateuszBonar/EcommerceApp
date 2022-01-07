@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
 
+import { useDispatchedActions } from 'Hooks';
+import { actions } from 'Store';
+import { ICart } from 'Store/cart';
+
 import useStyles from './styles';
-import useDispatchedActions from '../../../hooks/useDispatchedActions';
-import { actions } from '../../../store/actions';
-import { ICart } from '../../../store/cart/types';
 
 const CartItem: FC<{ item: ICart }> = ({ item }) => {
   const classes = useStyles();

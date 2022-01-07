@@ -3,7 +3,14 @@
     "baseUrl": ".",
     "paths": {
       "Store/*": ["src/store/*"],
-      "Store":  ["src/store"]
+      "Store":  ["src/store"],
+      "Hooks/*": ["src/hooks/*"],
+      "Hooks": ["src/hooks"],
+      "Assets/*": ["src/assets/*"],
+      "Assets": ["src/assets"],
+      "Components/*": ["src/components/*"],
+      "Components": ["src/components"],
+      "Commerce/*": ["src/lib/*"]
     }
   }
 }

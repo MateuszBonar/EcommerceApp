@@ -1,10 +1,11 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Product from './Product/Product';
-import useStyles from './styles';
 import { useSelector } from 'react-redux';
-import { getProductsModuleSelector } from '../../store/products/selectors';
-import { IProduct } from '../../store/products/types';
+
+import Product from 'Components/Products/Product';
+import { getProductsModuleSelector, IProduct } from 'Store/products';
+
+import useStyles from './styles';
 
 const Products = () => {
   const { products } = useSelector(getProductsModuleSelector);

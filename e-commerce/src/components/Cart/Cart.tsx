@@ -3,11 +3,12 @@ import { Container, Typography, Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import CartItem from './CartItem/CartItem';
-import useStyles from './styles';
-import useDispatchedActions from '../../hooks/useDispatchedActions';
-import { actions } from '../../store/actions';
+import { useDispatchedActions } from 'Hooks';
+import { actions } from 'Store';
 import { useSelector } from 'react-redux';
-import { getCartModuleSelector } from '../../store/cart/selectors';
+import { getCartModuleSelector } from 'Store/cart/selectors';
+
+import useStyles from './styles';
 
 const Cart: FC = (): JSX.Element => {
   const classes = useStyles();

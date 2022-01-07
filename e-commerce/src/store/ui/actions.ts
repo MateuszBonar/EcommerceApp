@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
-import { actionCreator } from '../utils';
-import * as actionTypes from '../constants';
+import { actionCreator } from 'Store/utils';
+import * as actionTypes from 'Store/constants';
 
 const toggleMobileVisible =
   (isMobileVisible: boolean) =>
