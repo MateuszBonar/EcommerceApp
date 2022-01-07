@@ -3,8 +3,9 @@ import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Navbar, Products, Cart } from './components';
-import { actions } from '@Store/actions';
+import { actions } from './store/actions';
 import useDispatchedActions from './hooks/useDispatchedActions';
+import { PUBLIC_ROUTE } from './routes';
 
 const App: FC = (): JSX.Element => {
   const { getProducts, getCarts } = useDispatchedActions({
@@ -23,8 +24,8 @@ const App: FC = (): JSX.Element => {
         <CssBaseline />
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Products} />
-          <Route path="/cart" component={Cart} />
+          <Route exact path={PUBLIC_ROUTE.HOME} component={Products} />
+          <Route path={PUBLIC_ROUTE.CART} component={Cart} />
         </Switch>
       </div>
     </Router>
