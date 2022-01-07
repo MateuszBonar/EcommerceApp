@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import CartItem from './CartItem/CartItem';
 import { useDispatchedActions } from 'Hooks';
 import { actions } from 'Store';
-import { useSelector } from 'react-redux';
 import { getCartModuleSelector } from 'Store/cart/selectors';
+import { PUBLIC_ROUTE } from '../../routes';
 
 import useStyles from './styles';
 
@@ -18,13 +19,16 @@ const Cart: FC = (): JSX.Element => {
     clearCart: actions.clearCart,
   });
 
+  const onClearCart = (): void => {
+    clearCart();
+  };
+
   const renderEmptyCart = (): JSX.Element => (
     <Typography variant="subtitle1">
       You have no items in your shopping cart,
-      <Link className={classes.link} to="/">
-        start adding some
+      <Link className={classes.link} to={PUBLIC_ROUTE.HOME}>
+        start adding some!
       </Link>
-      !
     </Typography>
   );
 
@@ -48,14 +52,14 @@ const Cart: FC = (): JSX.Element => {
             type="button"
             variant="contained"
             color="secondary"
-            onClick={() => clearCart}
+            onClick={onClearCart}
           >
             Empty cart
           </Button>
           <Button
             className={classes.checkoutButton}
             component={Link}
-            to="/checkout"
+            to={PUBLIC_ROUTE.CHECKOUT}
             size="large"
             type="button"
             variant="contained"
