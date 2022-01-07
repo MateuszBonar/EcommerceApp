@@ -4,6 +4,9 @@ export interface ICart {
   id: string;
   name: string;
   quantity: string;
+  line_total: {
+    formatted_with_symbol: string;
+  };
 }
 
 export interface ICarts {

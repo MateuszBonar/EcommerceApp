@@ -37,7 +37,7 @@ const Cart: FC = (): JSX.Element => {
 
   if (!carts.line_items) return <p>Loading</p>;
 
-  const renderCart = () => (
+  const renderCart = (): JSX.Element => (
     <>
       <Grid container spacing={3}>
         {carts.line_items.map(lineItem => (
