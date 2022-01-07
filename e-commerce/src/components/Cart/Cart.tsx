@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -15,8 +15,9 @@ const Cart: FC = (): JSX.Element => {
   const classes = useStyles();
   const { carts } = useSelector(getCartModuleSelector);
 
-  const { clearCart } = useDispatchedActions({
+  const { clearCart, getCarts } = useDispatchedActions({
     clearCart: actions.clearCart,
+    getCarts: actions.getCarts,
   });
 
   const onClearCart = (): void => {
@@ -31,6 +32,10 @@ const Cart: FC = (): JSX.Element => {
       </Link>
     </Typography>
   );
+
+  useEffect(() => {
+    getCarts();
+  }, []);
 
   if (!carts.line_items) return <p>Loading</p>;
 

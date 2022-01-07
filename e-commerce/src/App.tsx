@@ -14,8 +14,7 @@ const App: FC = (): JSX.Element => {
   });
 
   useEffect(() => {
-    getProducts();
-    getCarts();
+    Promise.all([getProducts(), getCarts()]).catch(e => console.warn(e));
   }, []);
 
   return (

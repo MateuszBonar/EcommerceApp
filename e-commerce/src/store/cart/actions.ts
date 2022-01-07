@@ -1,8 +1,10 @@
 import * as actionTypes from '../constants';
 import { Dispatch } from 'redux';
 import { commerce } from 'Commerce/commerce';
+import { actionWrapper } from 'Store/utils';
 
 const getCarts = () => (dispatch: Dispatch) => {
+  actionWrapper(actionTypes.GET_CARTS, commerce.cart.retrieve);
   dispatch({ type: `${actionTypes.GET_CARTS}_STARTED` });
   return commerce.cart.retrieve().then(
     (response: any) => dispatch({ type: `${actionTypes.GET_CARTS}_SUCCESS`, payload: response }),

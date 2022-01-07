@@ -8,7 +8,7 @@ export const initialStateCart = {
     formatted_with_symbol: '',
   },
   line_items: [],
-  total_items: '',
+  total_items: null,
 };
 
 export const initialStateModuleCart = {

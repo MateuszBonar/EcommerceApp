@@ -28,6 +28,15 @@ const cartReducer = (
         isLoading: false,
       };
     case `${actions.ADD_TO_CART}_SUCCESS`:
+      return {
+        ...state,
+        error: null,
+        carts: {
+          ...state.carts,
+          total_items: state.carts.total_items && state.carts.total_items + 1,
+        },
+        isLoading: false,
+      };
     case `${actions.UPDATE_CART}_SUCCESS`:
     case `${actions.REMOVE_FROM_CART}_SUCCESS`:
     case `${actions.CLEAR_CART}_SUCCESS`:

@@ -19,7 +19,7 @@ export interface ICarts {
     formatted_with_symbol: string;
   };
   line_items: ICart[];
-  total_items: string;
+  total_items: number | null;
 }
 
 export interface ICartModuleStore extends IStoreModule {
