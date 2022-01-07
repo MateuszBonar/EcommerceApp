@@ -36,7 +36,7 @@ const PrimarySearchAppBar: FC = () => {
     >
       <MenuItem>
         <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-          <Badge badgeContent={carts?.length} color="secondary">
+          <Badge badgeContent={carts?.line_items} color="secondary">
             <ShoppingCart />
           </Badge>
         </IconButton>
@@ -62,7 +62,7 @@ const PrimarySearchAppBar: FC = () => {
           {location.pathname === '/' && (
             <div className={classes.menuButton}>
               <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-                <Badge badgeContent={carts?.length} color="secondary">
+                <Badge badgeContent={carts?.line_items} color="secondary">
                   <ShoppingCart />
                 </Badge>
               </IconButton>

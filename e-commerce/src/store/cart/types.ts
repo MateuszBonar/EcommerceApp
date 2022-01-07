@@ -1,9 +1,25 @@
 import { IStoreModule } from '../types';
 
-export interface ICart {}
-
-export interface ICartModuleStore extends IStoreModule {
-  carts: ICart[];
+export interface ICart {
+  id: string;
+  name: string;
+  quantity: string;
 }
 
-export type CartActionPayload = ICart[] | Error | null;
+export interface ICarts {
+  id: string;
+  created: string;
+  line_total: {
+    formatted_with_symbol: string;
+  };
+  subtotal: {
+    formatted_with_symbol: string;
+  };
+  line_items: ICart[];
+}
+
+export interface ICartModuleStore extends IStoreModule {
+  carts: ICarts;
+}
+
+export type CartActionPayload = ICarts | Error | null;

@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import CartItem from './CartItem/CartItem';
 import useStyles from './styles';
+import useDispatchedActions from '../../hooks/useDispatchedActions';
+import { actions } from '../../store/actions';
+import { useSelector } from 'react-redux';
+import { getCartModuleSelector } from '../../store/cart/selectors';
 
-const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
+const Cart: FC = (): JSX.Element => {
   const classes = useStyles();
+  const { carts } = useSelector(getCartModuleSelector);
 
-  const handleEmptyCart = () => onEmptyCart();
+  const { clearCart } = useDispatchedActions({
+    clearCart: actions.clearCart,
+  });
 
-  const renderEmptyCart = () => (
+  const onUpdateCartQty = (): void => {
+    console.log('onUpdateCartQty');
+  };
+
+  const onRemoveFromCart = (): void => {
+    console.log('onUpdateCartQty');
+  };
+
+  const renderEmptyCart = (): JSX.Element => (
     <Typography variant="subtitle1">
       You have no items in your shopping cart,
       <Link className={classes.link} to="/">
@@ -20,12 +35,12 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
     </Typography>
   );
 
-  if (!cart.line_items) return 'Loading';
+  if (!carts.line_items) return <p>Loading</p>;
 
   const renderCart = () => (
     <>
       <Grid container spacing={3}>
-        {cart.line_items.map(lineItem => (
+        {carts.line_items.map(lineItem => (
           <Grid item xs={12} sm={4} key={lineItem.id}>
             <CartItem
               item={lineItem}
@@ -36,7 +51,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
+        <Typography variant="h4">Subtotal: {carts.subtotal.formatted_with_symbol}</Typography>
         <div>
           <Button
             className={classes.emptyButton}
@@ -44,7 +59,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
             type="button"
             variant="contained"
             color="secondary"
-            onClick={handleEmptyCart}
+            onClick={() => clearCart}
           >
             Empty cart
           </Button>
@@ -70,7 +85,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
       <Typography className={classes.title} variant="h3" gutterBottom>
         Your Shopping Cart
       </Typography>
-      {!cart.line_items.length ? renderEmptyCart() : renderCart()}
+      {!carts.line_items.length ? renderEmptyCart() : renderCart()}
     </Container>
   );
 };

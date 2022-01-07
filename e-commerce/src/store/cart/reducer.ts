@@ -1,7 +1,7 @@
 import { IReduxAction } from '../types';
 import * as actions from '../constants';
 import { initialStateModuleCart } from './initialState';
-import { ICart, ICartModuleStore, CartActionPayload } from './types';
+import { ICart, ICartModuleStore, CartActionPayload, ICarts } from './types';
 
 const cartReducer = (
   state: ICartModuleStore = initialStateModuleCart,
@@ -18,7 +18,7 @@ const cartReducer = (
       return {
         ...state,
         error: null,
-        carts: action.payload as ICart[],
+        carts: action.payload as ICarts,
         isLoading: false,
       };
     case `${actions.GET_CARTS}_FAILURE`:
