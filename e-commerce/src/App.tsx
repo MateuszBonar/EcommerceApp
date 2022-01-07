@@ -2,8 +2,8 @@ import React, { FC, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Navbar, Products, Cart, Checkout } from './components';
-import { actions } from './store/actions';
+import { Navbar, Products, Cart } from './components';
+import { actions } from '@Store/actions';
 import useDispatchedActions from './hooks/useDispatchedActions';
 
 const App: FC = (): JSX.Element => {
@@ -24,11 +24,7 @@ const App: FC = (): JSX.Element => {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Products} />
-          <Route exact path="/cart" component={Cart} />
-          {/*<Route path="/checkout" exact>*/}
-          {/*    <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout}*/}
-          {/*              error={errorMessage}/>*/}
-          {/*</Route>*/}
+          <Route path="/cart" component={Cart} />
         </Switch>
       </div>
     </Router>
