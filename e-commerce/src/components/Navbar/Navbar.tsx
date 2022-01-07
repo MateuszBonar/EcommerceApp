@@ -2,29 +2,24 @@ import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
-import { Link, useLocation } from 'react-router-dom';
-import { getCartModuleSelector } from '../../store/cart/selectors';
+import { Link } from 'react-router-dom';
+import useStyles from './styles';
 
 import logo from '../../assets/commerce.png';
-import useStyles from './styles';
-import useDispatchedActions from '../../hooks/useDispatchedActions';
-import { actions } from '../../store/actions';
+import { getCartModuleSelector } from '../../store/cart/selectors';
+import { PUBLIC_ROUTE } from '../../routes';
 
-const PrimarySearchAppBar: FC = () => {
+const PrimarySearchAppBar: FC = (): JSX.Element => {
   const { carts } = useSelector(getCartModuleSelector);
+
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
-  const location = useLocation();
-
-  const { toggleMobileVisible } = useDispatchedActions({
-    toggleMobileVisible: actions.toggleMobileVisible,
-  });
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleMobileMenuClose = () => setMobileMoreAnchorEl(null);
 
-  const renderMobileMenu = (
+  const renderMobileMenu: JSX.Element = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
@@ -35,7 +30,12 @@ const PrimarySearchAppBar: FC = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
+        <IconButton
+          component={Link}
+          to={PUBLIC_ROUTE.CART}
+          aria-label="Show cart items"
+          color="inherit"
+        >
           <Badge badgeContent={carts?.total_items} color="secondary">
             <ShoppingCart />
           </Badge>
@@ -51,7 +51,7 @@ const PrimarySearchAppBar: FC = () => {
         <Toolbar>
           <Typography
             component={Link}
-            to="/"
+            to={PUBLIC_ROUTE.HOME}
             variant="h6"
             className={classes.title}
             color="inherit"
@@ -59,7 +59,12 @@ const PrimarySearchAppBar: FC = () => {
             <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
           </Typography>
           <div className={classes.grow} />
-          <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
+          <IconButton
+            component={Link}
+            to={PUBLIC_ROUTE.CART}
+            aria-label="Show cart items"
+            color="inherit"
+          >
             <Badge badgeContent={carts?.total_items} color="secondary">
               <ShoppingCart />
             </Badge>

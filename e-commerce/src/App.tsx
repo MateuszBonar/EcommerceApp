@@ -3,7 +3,7 @@ import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Navbar, Products, Cart } from './components';
-import { actions } from './store/actions';
+import { actions } from './store';
 import useDispatchedActions from './hooks/useDispatchedActions';
 import { PUBLIC_ROUTE } from './routes';
 
