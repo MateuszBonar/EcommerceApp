@@ -1,6 +1,16 @@
 import { IStoreModule } from '../types';
 
-export interface IProduct {}
+export interface IProduct {
+  id: string;
+  name: string;
+  media: {
+    source: string;
+  };
+  price: {
+    formatted: string;
+  };
+  description: string;
+}
 
 export interface IProductsModuleStore extends IStoreModule {
   products: IProduct[];

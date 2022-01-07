@@ -6,3 +6,4 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 export const REFRESH_CART = 'REFRESH_CART';
 export const CAPTURE_CHECKOUT = 'CAPTURE_CHECKOUT';
+export const TOGGLE_MOBILE = 'TOGGLE_MOBILE';

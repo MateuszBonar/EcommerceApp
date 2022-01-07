@@ -3,7 +3,6 @@ import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Navbar, Products, Cart, Checkout } from './components';
-import { commerce } from './lib/commerce';
 import { actions } from './store/actions';
 import useDispatchedActions from './hooks/useDispatchedActions';
 
@@ -30,7 +29,7 @@ const App = () => {
     <Router>
       <div style={{ display: 'flex' }}>
         <CssBaseline />
-        <Navbar handleDrawerToggle={handleDrawerToggle} />
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Products />

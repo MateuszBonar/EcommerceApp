@@ -1,16 +1,30 @@
-import React from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
+import React, { FC } from 'react';
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Typography,
+  IconButton,
+} from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 
 import useStyles from './styles';
 import { IProduct } from '../../../store/products/types';
+import useDispatchedActions from '../../../hooks/useDispatchedActions';
+import { actions } from '../../../store/actions';
 
-const Product:FC<{product: IProduct, onAddToCart: ()=> void}> = ({ product, onAddToCart }) => {
+const Product: FC<{ product: IProduct }> = ({ product }) => {
   const classes = useStyles();
 
-  const handleAddToCart = () => onAddToCart(product.id, 1);
+  const { addToCart } = useDispatchedActions({
+    addToCart: actions.addToCart,
+  });
 
-  // POPRawic tutaj dangerout HTML
+  const handleAddToCart = (): void => {
+    addToCart(product.id, 1);
+  };
+
   return (
     <Card className={classes.root}>
       <CardMedia className={classes.media} image={product.media.source} title={product.name} />
@@ -23,7 +37,13 @@ const Product:FC<{product: IProduct, onAddToCart: ()=> void}> = ({ product, onAd
             ${product.price.formatted}
           </Typography>
         </div>
-        <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
+        {/*USE BECAUSE API RETURNS HTML*/}
+        <Typography
+          dangerouslySetInnerHTML={{ __html: product.description }}
+          variant="body2"
+          color="textSecondary"
+          component="p"
+        />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
         <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
@@ -35,4 +55,3 @@ const Product:FC<{product: IProduct, onAddToCart: ()=> void}> = ({ product, onAd
 };
 
 export default Product;
-

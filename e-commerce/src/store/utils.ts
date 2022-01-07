@@ -8,3 +8,8 @@ export const actionWrapper =
       (err: Error) => dispatch({ type: `${actionType}_FAILURE`, payload: err })
     );
   };
+
+export const actionCreator = (type: string, params?: Record<string, any>) => ({
+  type,
+  ...(params ? params : {}),
+});
