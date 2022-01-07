@@ -20,6 +20,19 @@ const PrimarySearchAppBar: FC = (): JSX.Element => {
 
   const handleMobileMenuClose = () => setMobileMoreAnchorEl(null);
 
+  const shoppingIcon: JSX.Element = (
+    <IconButton
+      component={Link}
+      to={PUBLIC_ROUTE.CART}
+      aria-label="Show cart items"
+      color="inherit"
+    >
+      <Badge badgeContent={carts?.total_items} color="secondary">
+        <ShoppingCart />
+      </Badge>
+    </IconButton>
+  );
+
   const renderMobileMenu: JSX.Element = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -31,16 +44,7 @@ const PrimarySearchAppBar: FC = (): JSX.Element => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton
-          component={Link}
-          to={PUBLIC_ROUTE.CART}
-          aria-label="Show cart items"
-          color="inherit"
-        >
-          <Badge badgeContent={carts?.total_items} color="secondary">
-            <ShoppingCart />
-          </Badge>
-        </IconButton>
+        {shoppingIcon}
         <p>Cart</p>
       </MenuItem>
     </Menu>
@@ -60,16 +64,7 @@ const PrimarySearchAppBar: FC = (): JSX.Element => {
             <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
           </Typography>
           <div className={classes.grow} />
-          <IconButton
-            component={Link}
-            to={PUBLIC_ROUTE.CART}
-            aria-label="Show cart items"
-            color="inherit"
-          >
-            <Badge badgeContent={carts?.total_items} color="secondary">
-              <ShoppingCart />
-            </Badge>
-          </IconButton>
+          {shoppingIcon}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

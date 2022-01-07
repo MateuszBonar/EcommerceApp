@@ -8,14 +8,17 @@ import {
   IconButton,
 } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
+import { useSelector } from 'react-redux';
 
 import { IProduct } from 'Store/products';
 import { useDispatchedActions } from 'Hooks';
 import { actions } from 'Store';
+import { getCartModuleSelector } from 'Store/cart/selectors';
 
 import useStyles from './styles';
 
 const Product: FC<{ product: IProduct }> = ({ product }) => {
+  const { isLoading } = useSelector(getCartModuleSelector);
   const classes = useStyles();
 
   const { addToCart } = useDispatchedActions({
@@ -47,7 +50,7 @@ const Product: FC<{ product: IProduct }> = ({ product }) => {
         />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
+        <IconButton aria-label="Add to Cart" onClick={handleAddToCart} disabled={isLoading}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>

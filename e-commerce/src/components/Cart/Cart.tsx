@@ -1,5 +1,12 @@
 import React, { FC, useEffect } from 'react';
-import { Container, Typography, Button, Grid } from '@material-ui/core';
+import {
+  Container,
+  Typography,
+  Button,
+  Grid,
+  CircularProgress,
+  LinearProgress,
+} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -13,7 +20,7 @@ import useStyles from './styles';
 
 const Cart: FC = (): JSX.Element => {
   const classes = useStyles();
-  const { carts } = useSelector(getCartModuleSelector);
+  const { carts, isLoading } = useSelector(getCartModuleSelector);
 
   const { clearCart, getCarts } = useDispatchedActions({
     clearCart: actions.clearCart,
@@ -37,7 +44,7 @@ const Cart: FC = (): JSX.Element => {
     getCarts();
   }, []);
 
-  if (!carts.line_items) return <p>Loading</p>;
+  if (isLoading) return <LinearProgress />;
 
   const renderCart = (): JSX.Element => (
     <>
