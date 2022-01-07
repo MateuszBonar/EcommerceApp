@@ -5,8 +5,7 @@ import { commerce } from '../../lib/commerce';
 const getCarts = () => (dispatch: Dispatch) => {
   dispatch({ type: `${actionTypes.GET_CARTS}_STARTED` });
   return commerce.cart.retrieve().then(
-    (response: unknown) =>
-      dispatch({ type: `${actionTypes.GET_CARTS}_SUCCESS`, payload: response }),
+    (response: any) => dispatch({ type: `${actionTypes.GET_CARTS}_SUCCESS`, payload: response }),
     (err: Error) => dispatch({ type: `${actionTypes.GET_CARTS}_FAILURE`, payload: err })
   );
 };

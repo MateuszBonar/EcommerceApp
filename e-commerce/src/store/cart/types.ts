@@ -16,6 +16,7 @@ export interface ICarts {
     formatted_with_symbol: string;
   };
   line_items: ICart[];
+  total_items: string;
 }
 
 export interface ICartModuleStore extends IStoreModule {
