@@ -10,7 +10,7 @@ const getCarts = () => (dispatch: Dispatch) => {
   );
 };
 
-const addToCart = (productId: string, quantity: any) => (dispatch: Dispatch) => {
+const addToCart = (productId: string, quantity: number) => (dispatch: Dispatch) => {
   dispatch({ type: `${actionTypes.ADD_TO_CART}_STARTED` });
   return commerce.cart.add(productId, quantity).then(
     (response: unknown) =>
@@ -19,7 +19,7 @@ const addToCart = (productId: string, quantity: any) => (dispatch: Dispatch) => 
   );
 };
 
-const updateCart = (lineItemId: string, quantity: any) => (dispatch: Dispatch) => {
+const updateCart = (lineItemId: string, quantity: number) => (dispatch: Dispatch) => {
   dispatch({ type: `${actionTypes.UPDATE_CART}_STARTED` });
   return commerce.cart.update(lineItemId, { quantity }).then(
     (response: unknown) =>

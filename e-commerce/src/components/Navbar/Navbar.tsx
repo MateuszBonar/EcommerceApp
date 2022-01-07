@@ -59,15 +59,11 @@ const PrimarySearchAppBar: FC = () => {
             <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
           </Typography>
           <div className={classes.grow} />
-          {location.pathname === '/' && (
-            <div className={classes.menuButton}>
-              <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
-                <Badge badgeContent={carts?.total_items} color="secondary">
-                  <ShoppingCart />
-                </Badge>
-              </IconButton>
-            </div>
-          )}
+          <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">
+            <Badge badgeContent={carts?.total_items} color="secondary">
+              <ShoppingCart />
+            </Badge>
+          </IconButton>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

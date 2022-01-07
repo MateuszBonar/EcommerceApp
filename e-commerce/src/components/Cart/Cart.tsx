@@ -17,14 +17,6 @@ const Cart: FC = (): JSX.Element => {
     clearCart: actions.clearCart,
   });
 
-  const onUpdateCartQty = (): void => {
-    console.log('onUpdateCartQty');
-  };
-
-  const onRemoveFromCart = (): void => {
-    console.log('onUpdateCartQty');
-  };
-
   const renderEmptyCart = (): JSX.Element => (
     <Typography variant="subtitle1">
       You have no items in your shopping cart,
