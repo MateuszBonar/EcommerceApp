@@ -9,6 +9,7 @@ import PublicRoutes from './PublicRoutes';
 const publicRoutes: IRoute[] = [
   {
     path: PUBLIC_ROUTE.HOME,
+    exact: true,
     component: lazy(() => import('../components/Products')),
   },
   {
