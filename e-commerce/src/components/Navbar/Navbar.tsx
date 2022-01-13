@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import { ShoppingCart } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,6 @@ import { PUBLIC_ROUTE } from '../../routes';
 import logo from 'Assets/commerce.png';
 
 import useStyles from './styles';
-import { useTranslation } from 'react-i18next';
 
 const PrimarySearchAppBar: FC = (): JSX.Element => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
