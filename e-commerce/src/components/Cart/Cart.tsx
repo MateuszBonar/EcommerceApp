@@ -68,17 +68,6 @@ const Cart: FC = (): JSX.Element => {
           >
             Empty cart
           </Button>
-          <Button
-            className={classes.checkoutButton}
-            component={Link}
-            to={PUBLIC_ROUTE.CHECKOUT}
-            size="large"
-            type="button"
-            variant="contained"
-            color="primary"
-          >
-            Checkout
-          </Button>
         </div>
       </div>
     </>
