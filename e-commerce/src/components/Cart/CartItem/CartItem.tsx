@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 
 import { useDispatchedActions } from 'Hooks';
 import { actions } from 'Store';
@@ -9,6 +10,7 @@ import useStyles from './styles';
 
 const CartItem: FC<{ item: ICart }> = ({ item }) => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const { updateCart, removeFromCart } = useDispatchedActions({
     updateCart: actions.updateCart,
@@ -42,7 +44,7 @@ const CartItem: FC<{ item: ICart }> = ({ item }) => {
           </Button>
         </div>
         <Button variant="contained" type="button" color="secondary" onClick={handleRemoveFromCart}>
-          Remove
+          {t('btn_remove')}
         </Button>
       </CardActions>
     </Card>

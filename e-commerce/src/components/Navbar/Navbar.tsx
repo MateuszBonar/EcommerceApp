@@ -9,12 +9,13 @@ import { PUBLIC_ROUTE } from '../../routes';
 import logo from 'Assets/commerce.png';
 
 import useStyles from './styles';
+import { useTranslation } from 'react-i18next';
 
 const PrimarySearchAppBar: FC = (): JSX.Element => {
-  const { carts } = useSelector(getCartModuleSelector);
-
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const classes = useStyles();
+  const { t } = useTranslation();
+  const { carts } = useSelector(getCartModuleSelector);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -45,7 +46,7 @@ const PrimarySearchAppBar: FC = (): JSX.Element => {
     >
       <MenuItem>
         {shoppingIcon}
-        <p>Cart</p>
+        <p>{t('inf_cart_elem')}</p>
       </MenuItem>
     </Menu>
   );
@@ -61,7 +62,8 @@ const PrimarySearchAppBar: FC = (): JSX.Element => {
             className={classes.title}
             color="inherit"
           >
-            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
+            <img src={logo} alt="commerce.js" height="25px" className={classes.image} />
+            {t('inf_nav_main')}
           </Typography>
           <div className={classes.grow} />
           {shoppingIcon}

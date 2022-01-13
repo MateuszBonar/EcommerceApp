@@ -1,13 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useSelector } from 'react-redux';
-import { LinearProgress } from '@material-ui/core';
 
 import Product from 'Components/Products/Product';
 import { getProductsModuleSelector, IProduct } from 'Store/products';
+import LoadingWrapper from 'Components/LoadingWrapper';
 
 import useStyles from './styles';
-import LoadingWrapper from 'Components/LoadingWrapper';
 
 const Products = () => {
   const { products, isLoading } = useSelector(getProductsModuleSelector);

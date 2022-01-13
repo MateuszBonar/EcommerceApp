@@ -4,6 +4,7 @@ import { Navbar } from 'Components';
 import { CssBaseline } from '@material-ui/core';
 import { PUBLIC_ROUTE } from '../routes';
 import { IRoute } from './types';
+import PublicRoutes from './PublicRoutes';
 
 const publicRoutes: IRoute[] = [
   {
@@ -25,7 +26,7 @@ const AppRoutes: FC = (): JSX.Element => {
           <Navbar />
           <Switch>
             {publicRoutes.map((data, index) => (
-              <PublicRoute
+              <PublicRoutes
                 key={index}
                 path={data.path}
                 component={data.component}

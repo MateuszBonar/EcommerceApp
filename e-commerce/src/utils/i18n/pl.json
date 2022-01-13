@@ -1,5 +1,9 @@
 {
   "translations": {
-    "login_inf_title": "Zaloguj się do systemu"
+    "btn_empty_cart": "Wyczyśc kartę",
+    "btn_remove": "Usuń",
+    "inf_nav_main": "Sklep",
+    "inf_cart_elem": "Koszyk",
+    "inf_loading": "Ładowanie"
   }
 }

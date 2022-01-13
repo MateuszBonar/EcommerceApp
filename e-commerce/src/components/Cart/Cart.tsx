@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import CartItem from './CartItem/CartItem';
 import { useDispatchedActions } from 'Hooks';
@@ -21,6 +22,7 @@ import useStyles from './styles';
 const Cart: FC = (): JSX.Element => {
   const classes = useStyles();
   const { carts, isLoading } = useSelector(getCartModuleSelector);
+  const { t } = useTranslation();
 
   const { clearCart, getCarts } = useDispatchedActions({
     clearCart: actions.clearCart,
@@ -66,7 +68,7 @@ const Cart: FC = (): JSX.Element => {
             color="secondary"
             onClick={onClearCart}
           >
-            Empty cart
+            {t('btn_empty_cart')}
           </Button>
         </div>
       </div>
