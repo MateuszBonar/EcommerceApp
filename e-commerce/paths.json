@@ -10,7 +10,11 @@
       "Assets": ["src/assets"],
       "Components/*": ["src/components/*"],
       "Components": ["src/components"],
-      "Commerce/*": ["src/lib/*"]
+      "Commerce/*": ["src/lib/*"],
+      "Utils": ["src/utils"],
+      "Utils/*": ["src/utils/*"],
+      "Constants": ["src/constants"],
+      "Constants/*": ["src/constants/*"]
     }
   }
 }

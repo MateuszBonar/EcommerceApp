@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { ActionsParam } from 'Store';
 
-const useDispatchedActions = (actions: ActionsParam): ActionsParam => {
+const useActions = (actions: ActionsParam): ActionsParam => {
   const dispatch = useDispatch();
   return Object.entries(actions).reduce(
     (acc, [key, action]) => ({
@@ -15,4 +15,4 @@ const useDispatchedActions = (actions: ActionsParam): ActionsParam => {
   );
 };
 
-export default useDispatchedActions;
+export default useActions;

@@ -1,1 +1,1 @@
-export { default as useDispatchedActions } from './useDispatchedActions';
+export { default as useDispatchedActions } from './useActions';

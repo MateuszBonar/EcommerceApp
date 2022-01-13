@@ -7,6 +7,8 @@ module.exports = function override(config) {
     Assets: "src/assets",
     Components: "src/components",
     Commerce: "src/lib",
+    Utils: "src/utils",
+    Constants: "src/constants",
   })(config);
 
   return config;
