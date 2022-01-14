@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import CartItem from './CartItem/CartItem';
+import CartItem from './CartItem';
 import { useDispatchedActions } from 'Hooks';
 import { actions } from 'Store';
 import { getCartModuleSelector } from 'Store/cart/selectors';

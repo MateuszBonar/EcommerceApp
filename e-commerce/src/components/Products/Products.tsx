@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useSelector } from 'react-redux';
 
@@ -8,7 +8,7 @@ import LoadingWrapper from 'Components/LoadingWrapper';
 
 import useStyles from './styles';
 
-const Products = () => {
+const Products: FC = (): JSX.Element => {
   const { products, isLoading } = useSelector(getProductsModuleSelector);
   const classes = useStyles();
 

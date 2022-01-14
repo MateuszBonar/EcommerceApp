@@ -1,4 +1,4 @@
-import { IStoreModule } from '../types';
+import { IStoreModule } from 'Store';
 
 export interface IProduct {
   id: string;

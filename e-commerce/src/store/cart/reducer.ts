@@ -1,4 +1,4 @@
-import { IReduxAction } from '../types';
+import { IReduxAction } from 'Store';
 import * as actions from '../constants';
 import { initialStateModuleCart } from './initialState';
 import { ICartModuleStore, CartActionPayload, ICarts } from './types';

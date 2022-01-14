@@ -1,6 +1,6 @@
-import * as actionTypes from '../constants';
 import { Dispatch } from 'redux';
-import { commerce } from '../../lib/commerce';
+import * as actionTypes from '../constants';
+import { commerce } from 'Commerce/commerce';
 
 const getProducts = () => (dispatch: Dispatch) => {
   dispatch({ type: `${actionTypes.GET_PRODUCTS}_STARTED` });
