@@ -17,10 +17,25 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "Store/*": ["src/store/*"],
+      "Store":  ["src/store"],
+      "Hooks/*": ["src/hooks/*"],
+      "Hooks": ["src/hooks"],
+      "Assets/*": ["src/assets/*"],
+      "Assets": ["src/assets"],
+      "Components/*": ["src/components/*"],
+      "Components": ["src/components"],
+      "Commerce/*": ["src/lib/*"],
+      "Utils": ["src/utils"],
+      "Utils/*": ["src/utils/*"],
+      "Constants": ["src/constants"],
+      "Constants/*": ["src/constants/*"]
+    }
   },
   "include": [
     "./src/**/*"
   ],
-  "extends": "./paths.json"
 }
