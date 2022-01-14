@@ -58,7 +58,9 @@ const Cart: FC = (): JSX.Element => {
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">Subtotal: {carts.subtotal.formatted_with_symbol}</Typography>
+        <Typography variant="h4">
+          {t('inf_subtotal')} {carts.subtotal.formatted_with_symbol}
+        </Typography>
         <div>
           <Button
             className={classes.emptyButton}

@@ -7,6 +7,7 @@
     "inf_loading": "Ładowanie",
     "inf_empty_cart_1": "Masz pusty koszyk",
     "inf_empty_cart_2": "kup coś !",
-    "inf_cart": "Twój koszyk"
+    "inf_cart": "Twój koszyk",
+    "inf_subtotal": "Suma: "
   }
 }
