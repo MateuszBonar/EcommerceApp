@@ -35,9 +35,9 @@ const Cart: FC = (): JSX.Element => {
 
   const renderEmptyCart = (): JSX.Element => (
     <Typography variant="subtitle1">
-      You have no items in your shopping cart,
+      {t('inf_empty_cart_1')}
       <Link className={classes.link} to={PUBLIC_ROUTE.HOME}>
-        start adding some!
+        {t('inf_empty_cart_2')}
       </Link>
     </Typography>
   );
@@ -79,7 +79,7 @@ const Cart: FC = (): JSX.Element => {
     <Container>
       <div className={classes.toolbar} />
       <Typography className={classes.title} variant="h3" gutterBottom>
-        Your Shopping Cart
+        {t('inf_cart')}
       </Typography>
       {!carts.line_items.length ? renderEmptyCart() : renderCart()}
     </Container>

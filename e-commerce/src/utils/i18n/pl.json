@@ -4,6 +4,9 @@
     "btn_remove": "Usuń",
     "inf_nav_main": "Sklep",
     "inf_cart_elem": "Koszyk",
-    "inf_loading": "Ładowanie"
+    "inf_loading": "Ładowanie",
+    "inf_empty_cart_1": "Masz pusty koszyk",
+    "inf_empty_cart_2": "kup coś !",
+    "inf_cart": "Twój koszyk"
   }
 }
